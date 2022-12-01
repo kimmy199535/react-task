@@ -30,9 +30,13 @@ const App = () => {
       todo: todo,
       isDone: false,
     };
-    setLists([...lists, newList]);
-    setTitle("");
-    setTodo("");
+    if (todo === "" || title === "") {
+      alert("제목과 내용을 입력해주세요");
+    } else {
+      setLists([...lists, newList]);
+      setTitle("");
+      setTodo("");
+    }
   };
 
   const deleteList = (id) => {
